@@ -1,15 +1,12 @@
-//defining vars
 let nameOfbot = prompt("Name of bots: ")
 let gameId = prompt("Enter Game Pin: ");
 let numberOfBots = prompt("How many Bots: ")
 let botsToJoin;
 
-//Credit
 console.log('%c Created by Sean v  :D', 'background: #222; color: yellow');
 
 
 
-// Making a for loop for flood
 for(botsToJoin = 0; botsToJoin < numberOfBots; botsToJoin++)
 
 fetch("https://api.blooket.com/api/firebase/join", {
@@ -24,7 +21,6 @@ fetch("https://api.blooket.com/api/firebase/join", {
   },
   "referrer": "https://www.blooket.com/",
   "referrerPolicy": "strict-origin-when-cross-origin",
-  //adding vars to body for correct values
   "body": "{\"id\":\"" + gameId+ "\",\"name\":\"" + nameOfbot + botsToJoin+ "\"}",
   "method": "PUT",
   "mode": "cors",
